@@ -27,6 +27,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/types.h>
+#include <sys/unistd.h>
 #endif
 #include <boost/algorithm/string/trim.hpp>
 #include <boost/asio.hpp>
@@ -160,6 +161,7 @@ class UtilAll {
   static string getLocalHostName();
   static string getLocalAddress();
   static string getHomeDirectory();
+  static string getCurrentDirectory();
 
   static string getProcessName();
 

@@ -267,6 +267,18 @@ string UtilAll::getHomeDirectory() {
   return homeDir;
 }
 
+string UtilAll::getCurrentDirectory() {
+  char* pwd = get_current_dir_name();
+  string currentDir;
+  if (pwd == NULL) {
+    currentDir = ".";
+  } else {
+    currentDir = pwd;
+    free(pwd);
+  }
+  return currentDir;
+}
+
 string UtilAll::getProcessName() {
 #ifndef WIN32
   char buf[PATH_MAX + 1] = {0};
